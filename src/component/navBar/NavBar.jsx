@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./NavBar.module.scss";
 
-function NavBar() {
+function NavBar({ handleOpen }) {
   return (
     <div className={classes.container}>
       <div className={classes.name}>WENTAI OUYANG</div>
@@ -11,7 +11,9 @@ function NavBar() {
           <li>RESUME</li>
         </ul>
       </div>
-      <div></div>
+      <div>
+        <button onClick={handleOpen}>click</button>
+      </div>
     </div>
   );
 }
