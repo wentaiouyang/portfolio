@@ -24,7 +24,12 @@ function Home() {
       </Menu>
       <div id={"page-wrap"}>
         <NavBar handleOpen={handleOpen} />
-        <p>Hi there! This is Owen's Portfolio </p>
+        <div className={classes.welcome_text}>
+          <p className={classes.title}>
+            Hi there! <br />
+            This is Owen's Portfolio{" "}
+          </p>
+        </div>
       </div>
     </div>
   );

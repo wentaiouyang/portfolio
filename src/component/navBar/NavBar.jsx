@@ -11,7 +11,7 @@ function NavBar({ handleOpen }) {
           <li>RESUME</li>
         </ul>
       </div>
-      <div>
+      <div className={classes.burger}>
         <button onClick={handleOpen}>click</button>
       </div>
     </div>
