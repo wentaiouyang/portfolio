@@ -16,6 +16,10 @@
   .burger {
     position: absolute;
     right: 10%;
+    .burgerBtn {
+      width: 30px;
+      cursor: pointer;
+    }
   }
   .nav_list {
     width: 100%;

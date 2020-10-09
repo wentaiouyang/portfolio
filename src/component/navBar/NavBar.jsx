@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./NavBar.module.scss";
 
-function NavBar({ handleOpen }) {
+function NavBar({ isOpen, handleOpen }) {
   return (
     <div className={classes.container}>
       <div className={classes.name}>WENTAI OUYANG</div>
@@ -12,7 +12,14 @@ function NavBar({ handleOpen }) {
         </ul>
       </div>
       <div className={classes.burger}>
-        <button onClick={handleOpen}>click</button>
+        {!isOpen && (
+          <img
+            className={classes.burgerBtn}
+            onClick={handleOpen}
+            src={require("../../images/Burger_Menu.png")}
+            alt="burger"
+          />
+        )}
       </div>
     </div>
   );
