@@ -34,28 +34,6 @@
   }
 }
 
-.hand {
-  display: inline-block;
-  width: 70px;
-  animation-name: wave;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  40% {
-    transform: rotate(60deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 .sideBar {
   background-color: #99f1cc;
   width: 100%;

@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
+import classes from "./Resume.module.scss";
 import { Context } from "../../Context";
-import classes from "./Home.module.scss";
 import NavBar from "../../component/NavBar/NavBar";
 import { scaleDown as Menu } from "react-burger-menu";
-import "./Home.css";
 
-function Home() {
+function Resume() {
   const { state } = useContext(Context);
   const { isOpen, setIsOpen } = state;
+
   return (
     <div className={classes.container}>
       <Menu
         noOverlay={true}
         customCrossIcon={<img src={require("../../images/Close.png")} />}
         outerContainerId={"App"}
-        pageWrapId={"page-wrap"}
-        disableAutoFocus
+        pageWrapId={"page"}
+        disableAutoFocus={true}
         right
         burgerButtonClassName={classes.burgerIcon}
         isOpen={isOpen}
@@ -55,27 +55,12 @@ function Home() {
           </div>
         </div>
       </Menu>
-      <div id={"page-wrap"} className={classes.nav_wrapper}>
-        <NavBar
-          isOpen={isOpen}
-          handleOpen={() => {
-            setIsOpen(!isOpen);
-          }}
-        />
-        <div className={classes.welcome_text}>
-          <p className={classes.title}>
-            Hi there!{" "}
-            <img
-              className={classes.hand}
-              src={require("../../images/hand.png")}
-            />
-            <br />
-            This is Owen's Portfolio{" "}
-          </p>
-        </div>
+      <div id={"page"}>
+        <NavBar />
+        <div>dasdas</div>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Resume;
