@@ -14,13 +14,19 @@ function NavBar() {
         <ul>
           <NavLink
             to={"/work"}
-            activeStyle={{ color: "#99f1cc", fontWeight: "bold" }}
+            activeStyle={{
+              color: "rgb(26 193 123)",
+              fontWeight: "bold",
+            }}
           >
             <li className={classes.link}>WORK</li>
           </NavLink>
           <NavLink
             to={"/resume"}
-            activeStyle={{ color: "#99f1cc", fontWeight: "bold" }}
+            activeStyle={{
+              color: "rgb(26 193 123)",
+              fontWeight: "bold",
+            }}
           >
             <li className={classes.link}>RESUME</li>
           </NavLink>

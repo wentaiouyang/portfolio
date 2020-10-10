@@ -9,9 +9,12 @@ function Home() {
   const { state } = useContext(Context);
   const { isOpen, setIsOpen } = state;
   return (
-    <div className={classes.container}>
+    <div
+      className={classes.container}
+      style={isOpen ? { overflowY: "hidden" } : { overflowY: "auto" }}
+    >
       <Menu
-        noOverlay={true}
+        // noOverlay={true}
         customCrossIcon={<img src={require("../../images/Close.png")} />}
         outerContainerId={"App"}
         pageWrapId={"page-wrap"}
@@ -34,7 +37,7 @@ function Home() {
                 src={require("../../images/Linkedin.png")}
                 alt="Linkedin"
               />
-              <p className={classes.icon_text}>Linkedin</p>
+              <p className={classes.icon_text}>LINKEDIN</p>
             </div>
             <div>
               <img
@@ -42,7 +45,7 @@ function Home() {
                 src={require("../../images/Facebook.png")}
                 alt="Facebook"
               />
-              <p className={classes.icon_text}>Facebook</p>
+              <p className={classes.icon_text}>FACEBOOK</p>
             </div>
             <div>
               <img
@@ -50,7 +53,7 @@ function Home() {
                 src={require("../../images/Github.png")}
                 alt="Github"
               />
-              <p className={classes.icon_text}>Github</p>
+              <p className={classes.icon_text}>GITHUB</p>
             </div>
           </div>
         </div>
