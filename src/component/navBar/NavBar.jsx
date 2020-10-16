@@ -33,12 +33,10 @@ function NavBar() {
         </ul>
       </div>
       <div className={classes.burger}>
-        {console.log(isOpen)}
         {!isOpen && (
           <img
             className={classes.burgerBtn}
             onClick={() => {
-              console.log("naj");
               setIsOpen(true);
             }}
             src={require("../../images/Burger_Menu.png")}

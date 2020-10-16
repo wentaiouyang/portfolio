@@ -4,10 +4,17 @@ import classes from "./Home.module.scss";
 import NavBar from "../../component/NavBar/NavBar";
 import { scaleDown as Menu } from "react-burger-menu";
 import "./Home.css";
+import Thumbnail from "../../component/Thumbnail/Thumbnail";
 
 function Home() {
   const { state } = useContext(Context);
   const { isOpen, setIsOpen } = state;
+
+  const works = [
+    { id: 0, title: "Physical Computing" },
+    { id: 1, title: "dsfs" },
+  ];
+
   return (
     <div
       className={classes.container}
@@ -76,6 +83,7 @@ function Home() {
             This is Owen's Portfolio{" "}
           </p>
         </div>
+        <Thumbnail />
       </div>
     </div>
   );
