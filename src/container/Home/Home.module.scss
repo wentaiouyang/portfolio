@@ -4,6 +4,7 @@
 
 .container {
   height: 100vh;
+  overflow-x: hidden;
   .sideBar {
     padding-top: 100px;
     height: 100vh;
@@ -30,6 +31,23 @@
           margin-right: 20px;
         }
       }
+    }
+  }
+}
+.Thumbnail {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .thum_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    i {
+      width: 300px;
+      margin: 30px;
     }
   }
 }
@@ -64,11 +82,40 @@
 
 .welcome_text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+
+  position: relative;
+  .spaceship {
+    position: absolute;
+    width: 150px;
+    left: -200px;
+    top: 40vh;
+    animation-name: fly;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    z-index: 10000000;
+  }
   .title {
     font-size: 70px;
     text-transform: uppercase;
     text-align: left;
+  }
+}
+
+@keyframes fly {
+  0% {
+    left: -100px;
+    top: 60vh;
+  }
+
+  50% {
+    left: 80vw;
+    top: 60vh;
+  }
+
+  100% {
+    left: 100vw;
+    top: -200vh;
   }
 }

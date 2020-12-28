@@ -1,19 +1,29 @@
-import React, { useContext } from "react";
-import { Context } from "../../Context";
-import classes from "./Home.module.scss";
-import NavBar from "../../component/NavBar/NavBar";
-import { scaleDown as Menu } from "react-burger-menu";
-import "./Home.css";
-import Thumbnail from "../../component/Thumbnail/Thumbnail";
+import React, { useContext } from "react"
+import { Context } from "../../Context"
+import classes from "./Home.module.scss"
+import NavBar from "../../component/NavBar/NavBar"
+import { scaleDown as Menu } from "react-burger-menu"
+import "./Home.css"
+import Thumbnail from "../../component/Thumbnail/Thumbnail"
 
 function Home() {
-  const { state } = useContext(Context);
-  const { isOpen, setIsOpen } = state;
+  const { state } = useContext(Context)
+  const { isOpen, setIsOpen } = state
 
   const works = [
-    { id: 0, title: "Physical Computing" },
-    { id: 1, title: "dsfs" },
-  ];
+    {
+      id: 0,
+      title: "Space Platform",
+      img: require("../../images/space-1.png"),
+    },
+    {
+      id: 1,
+      title: "Infinity Travel",
+      img: require("../../images/infi-1.png"),
+    },
+    { id: 1, title: "haha" },
+    // { id: 1, title: "haha" },
+  ]
 
   return (
     <div
@@ -69,7 +79,7 @@ function Home() {
         <NavBar
           isOpen={isOpen}
           handleOpen={() => {
-            setIsOpen(!isOpen);
+            setIsOpen(!isOpen)
           }}
         />
         <div className={classes.welcome_text}>
@@ -82,11 +92,25 @@ function Home() {
             <br />
             This is Owen's Portfolio{" "}
           </p>
+          <img
+            className={classes.spaceship}
+            src={require("../../images/pixcelboost.png")}
+            alt=""
+          />
         </div>
-        <Thumbnail />
+        <div className={classes.Thumbnail}>
+          <div className={classes.thum_wrapper}>
+            {works.map((work, i) => {
+              return <Thumbnail key={i} text={work.title} img={work.img} />
+            })}
+            {works.map(() => {
+              return <i></i>
+            })}
+          </div>
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

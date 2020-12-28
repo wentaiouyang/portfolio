@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import classes from "./Thumbnail.module.scss";
+import React, { useState } from "react"
+import classes from "./Thumbnail.module.scss"
 
-function Thumbnail() {
-  const [isHover, setIsHover] = useState(false);
+function Thumbnail({ text, img }) {
+  const [isHover, setIsHover] = useState(false)
   return (
     <div
       onMouseOver={() => {
-        setIsHover(true);
+        setIsHover(true)
       }}
       onMouseLeave={() => {
-        setIsHover(false);
+        setIsHover(false)
       }}
       id={"case"}
       className={classes.case}
+      style={
+        img
+          ? {
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+            }
+          : { backgroundColor: "black" }
+      }
     >
       {console.log(isHover)}
       <div
@@ -22,10 +31,10 @@ function Thumbnail() {
             : classes.overlay
         }
       >
-        PLACEHOLDER
+        {text}
       </div>
     </div>
-  );
+  )
 }
 
-export default Thumbnail;
+export default Thumbnail
