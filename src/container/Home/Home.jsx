@@ -21,8 +21,8 @@ function Home() {
       title: "Infinity Travel",
       img: require("../../images/infi-1.png"),
     },
-    { id: 1, title: "haha" },
-    // { id: 1, title: "haha" },
+    // { id: 2, title: "Swipe Code", img: require("../../images/swp-1.png") },
+    { id: 3, title: "Graphic Design", img: require("../../images/grp-1.png") },
   ]
 
   return (
@@ -54,7 +54,9 @@ function Home() {
                 src={require("../../images/Linkedin.png")}
                 alt="Linkedin"
               />
-              <p className={classes.icon_text}>LINKEDIN</p>
+              <a href="https://www.linkedin.com/in/wentai-ouyang-621613171/">
+                <p className={classes.icon_text}>LINKEDIN</p>
+              </a>
             </div>
             <div>
               <img
@@ -62,7 +64,9 @@ function Home() {
                 src={require("../../images/Facebook.png")}
                 alt="Facebook"
               />
-              <p className={classes.icon_text}>FACEBOOK</p>
+              <a href="https://www.facebook.com/wentai.ouyang">
+                <p className={classes.icon_text}>FACEBOOK</p>
+              </a>
             </div>
             <div>
               <img
@@ -70,7 +74,9 @@ function Home() {
                 src={require("../../images/Github.png")}
                 alt="Github"
               />
-              <p className={classes.icon_text}>GITHUB</p>
+              <a href="https://github.com/wentaiouyang">
+                <p className={classes.icon_text}>GITHUB</p>
+              </a>
             </div>
           </div>
         </div>
@@ -101,10 +107,17 @@ function Home() {
         <div className={classes.Thumbnail}>
           <div className={classes.thum_wrapper}>
             {works.map((work, i) => {
-              return <Thumbnail key={i} text={work.title} img={work.img} />
+              return (
+                <Thumbnail
+                  key={i}
+                  text={work.title}
+                  img={work.img}
+                  id={work.id}
+                />
+              )
             })}
-            {works.map(() => {
-              return <i></i>
+            {works.map((work, i) => {
+              return <i key={i}></i>
             })}
           </div>
         </div>

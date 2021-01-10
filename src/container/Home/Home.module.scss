@@ -30,6 +30,10 @@
           width: 20px;
           margin-right: 20px;
         }
+        a {
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
@@ -45,6 +49,7 @@
     justify-content: center;
     flex-wrap: wrap;
     max-width: 1300px;
+    margin-top: 100px;
     i {
       width: 300px;
       margin: 30px;
@@ -93,7 +98,7 @@
     top: 40vh;
     animation-name: fly;
     animation-duration: 6s;
-    animation-iteration-count: infinite;
+    // animation-iteration-count: infinite;
     z-index: 10000000;
   }
   .title {
@@ -106,12 +111,12 @@
 @keyframes fly {
   0% {
     left: -100px;
-    top: 60vh;
+    top: 20vh;
   }
 
   50% {
     left: 80vw;
-    top: 60vh;
+    top: 20vh;
   }
 
   100% {

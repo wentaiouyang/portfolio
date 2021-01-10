@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import classes from "./Thumbnail.module.scss"
+import { useHistory } from "react-router-dom"
 
-function Thumbnail({ text, img }) {
+function Thumbnail({ text, img, id }) {
+  const history = useHistory()
   const [isHover, setIsHover] = useState(false)
+  const redirectTo = (path) => {
+    history.push(path)
+  }
   return (
     <div
       onMouseOver={() => {
@@ -22,8 +27,10 @@ function Thumbnail({ text, img }) {
             }
           : { backgroundColor: "black" }
       }
+      onClick={() => {
+        redirectTo(`/detail/${text}/${id}`)
+      }}
     >
-      {console.log(isHover)}
       <div
         className={
           isHover
